@@ -3,6 +3,7 @@
   "name": "Sensus Analytics Integration",
   "version": "0.1.0",
   "documentation": "https://github.com/marlinofdoom/sensus_analytics_integration",
+  "issue_tracker": "https://github.com/marlinofdoom/sensus_analytics_integration/issues",
   "dependencies": [],
   "codeowners": ["@marlinofdoom"],
   "requirements": [
