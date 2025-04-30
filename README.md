@@ -6,7 +6,7 @@
 
 # HomeAssistant - Sensus Analytics Integration
 
-A custom Home Assistant integration to monitor your water usage from Sensus Analytics.
+A custom Home Assistant integration to monitor your water usage from Sensus Analytics, based on the water-only version by Zestysoft (https://github.com/zestysoft/sensus_analytics_integration/)
 
 ## Features
 
@@ -76,14 +76,25 @@ A custom Home Assistant integration to monitor your water usage from Sensus Anal
      - **Username**: Your Sensus Analytics account username.
      - **Password**: Your Sensus Analytics account password.
      - **Account Number**: Your Sensus Analytics account number.
-     - **Meter Number**: Your water meter number.
-     - **Unit Type**: Choose which unit type you want the data to be used by Home Assistant.
+     - **Water Meter Number**: Your water meter number.
+     - **Water Unit Type**: Choose which unit type you want the data to be used by Home Assistant.
      - **Tier 1 Gallons Cutoff**: Number of gallons before transitioning to tier 2 pricing.
      - **Tier 1 Per Gallon Price**: Price per gallon (not unit or CF) at tier 1 level.
      - **Tier 2 Gallons Cutoff**: Number of gallons before transitioning to tier 3 pricing.
      - **Tier 2 Per Gallon Price**: Price per gallon (not unit or CF) at tier 2 level.
      - **Tier 3 Per Gallon Price**: Price per gallon (not unit or CF) at tier 3 level.
-     - **Service Fee**: Price the water company charges just to have service.
+     - **Water Service Fee**: Price the water company charges just to have service.
+     - **Electric Meter Number**: Your water meter number.
+     - **Electric Unit Type**: Choose which unit type you want the data to be used by Home Assistant.
+     - **Electric Commodity Price**: Price per kWh for electric purchased from the grid.
+     - **Electric Solar Credit Price**: (Optional) Price per kWh for solar-generated electric sold to the grid.
+     - **Electric Service Fee**: Price the electric company charges just to have service.
+     - **Gas Meter Number**: Your gas meter number.
+     - **Gas Unit Type**: Choose which unit type you want the data to be used by Home Assistant.
+     - **Gas Commodity Price (Fixed)**: Fixed price per therm for gas.
+     - **Gas Commodity Price (Variable)**: (Optional) Variable price per therm for gas.
+     - **Gas Service Fee**: Price the gas company charges just to have service.
+
    - Click "**Submit**" to finalize the configuration.
 
 ## Sensor Entities
