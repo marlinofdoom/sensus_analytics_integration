@@ -117,12 +117,6 @@ Below are the sensor entities created by this integration:
 - `sensor.sensus_analytics_last_hour_temperature`: Temperature for the last hour from the previous day.
 - `sensor.sensus_analytics_last_hour_timestamp`: Timestamp of the last hour's data from the previous day.
 
-# Be kind
-
-If you like the integration, how about buying me a coffee? :)
-
-[![Buy me a coffee!](https://www.buymeacoffee.com/assets/img/custom_images/black_img.png)](https://www.buymeacoffee.com/zestysoft)
-
 ## License
 
 [Apache 2.0](LICENSE)
