@@ -12,23 +12,45 @@
           "password": "Password",
           "password_description": "Enter your Sensus Analytics password.",
           "account_number": "Account Number",
-          "account_number_description": "Enter your Sensus Analytics account number.",
-          "meter_number": "Meter Number",
-          "meter_number_description": "Enter your Sensus Analytics meter number.",
-          "unit_type": "Unit Type (CF or G)",
-          "unit_type_description": "Select the unit type. 'CF' stands for Cubic Feet and 'G' stands for Gallons.",
-          "tier1_gallons": "Tier 1 Gallons",
-          "tier1_gallons_description": "Enter the number of gallons for Tier 1. Leave blank if not applicable.",
-          "tier1_price": "Tier 1 Price",
-          "tier1_price_description": "Enter the price per gallon for Tier 1 (e.g., 0.0128).",
-          "tier2_gallons": "Tier 2 Gallons",
-          "tier2_gallons_description": "Enter the number of gallons for Tier 2. Leave blank if not applicable.",
-          "tier2_price": "Tier 2 Price",
-          "tier2_price_description": "Enter the price per gallon for Tier 2 (e.g., 0.0150).",
-          "tier3_price": "Tier 3 Price",
-          "tier3_price_description": "Enter the price per gallon for Tier 3 (e.g., 0.0175).",
-          "service_fee": "Service Fee",
-          "service_fee_description": "Enter the fixed service fee amount (e.g., 15.00)."
+          "account_number_description": "Enter your Sensus Analytics account (customer) number.",
+          "water_meter_number": "Water Meter Number",
+          "water_meter_number_description": "Enter your Sensus Analytics water meter number.",
+          "water_unit_type": "Unit Type (CF or G)",
+          "water_unit_type_description": "Select the water unit type. 'CF' stands for Cubic Feet and 'G' stands for Gallons.",
+          "water_tier1_gallons": "Tier 1 Gallons",
+          "water_tier1_gallons_description": "Enter the number of gallons for Tier 1. Leave blank if not applicable.",
+          "water_tier1_price": "Tier 1 Price",
+          "water_tier1_price_description": "Enter the price per gallon for Tier 1 (e.g., 0.00717).",
+          "water_tier2_gallons": "Tier 2 Gallons",
+          "water_tier2_gallons_description": "Enter the number of gallons for Tier 2. Leave blank if not applicable.",
+          "water_tier2_price": "Tier 2 Price",
+          "water_tier2_price_description": "Enter the price per gallon for Tier 2 (e.g., 0.00789).",
+          "water_tier3_price": "Tier 3 Price",
+          "water_tier3_price_description": "Enter the price per gallon for Tier 3 (e.g., 0.00867).",
+          "water_service_fee": "Water Service Fee",
+          "water_service_fee_description": "Enter the fixed service fee amount (e.g., 15.17).",
+          "electric_meter_number": "Electric Meter Number",
+          "electric_meter_number_description": "Enter your Sensus Analytics electric meter number.",
+          "electric_unit_type": "Unit Type (kWh)",
+          "electric_unit_type_description": "Select the unit type. 'kWh' stands for kilowatt hours.",
+          "electric_commodity_price": "Electric Commodity Price (from utility)",
+          "electric_commodity_price_description": "Enter the price per kWh for electricity (e.g., 0.1413).",
+          "electric_solar_credit_price": "Solar Credit (Wholesale) Electric Price",
+          "electric_solar_credit_price_description": "Enter the price per kWh for solar electric returned to grid (e.g., -0.0872). Leave blank if not applicable.",
+          "electric_service_fee": "Service Fee",
+          "electric_service_fee_description": "Enter the fixed electric service fee amount (e.g., 12.60).",
+          "gas_meter_number": "Natural Gas Meter Number",
+          "gas_meter_number_description": "Enter your Sensus Analytics natural gas meter number.",
+          "gas_unit_type": "Unit Type (CCF or Therm)",
+          "gas_unit_type_description": "Select the unit type. 'CCF' stands for 100 cubic feet and Therm stands for 100,000 BTUs.",
+          "gas_commodity_fixed_price": "Natural Gas Commodity Price (Fixed)",
+          "gas_commodity_fixed_price_description": "Enter the fixed price per therm for gas (e.g., 0.32).",
+          "gas_commodity_variable_price": "Natural Gas Commodity Price (Variable)",
+          "gas_commodity_variable_price_description": "Enter the variable price per therm for gas (e.g., 0.11).",
+          "gas_heat_content_factor": "Variable heat content factor to convert natural gas between CCF and Therms",
+          "gas_heat_content_factor_description": "Enter the price per therm for solar electric returned to grid (e.g., -0.0872). Leave blank if not applicable.",
+          "gas_service_fee": "Service Fee",
+          "gas_service_fee_description": "Enter the fixed electric service fee amount (e.g., 13.00)."
         }
       },
       "init": {
@@ -41,23 +63,45 @@
           "password": "Password",
           "password_description": "Enter your Sensus Analytics password.",
           "account_number": "Account Number",
-          "account_number_description": "Enter your Sensus Analytics account number.",
-          "meter_number": "Meter Number",
-          "meter_number_description": "Enter your Sensus Analytics meter number.",
-          "unit_type": "Unit Type (CF or G)",
-          "unit_type_description": "Select the unit type. 'CF' stands for Cubic Feet and 'G' stands for Gallons.",
-          "tier1_gallons": "Tier 1 Gallons",
-          "tier1_gallons_description": "Enter the number of gallons for Tier 1. Leave blank if not applicable.",
-          "tier1_price": "Tier 1 Price",
-          "tier1_price_description": "Enter the price per gallon for Tier 1 (e.g., 0.0128).",
-          "tier2_gallons": "Tier 2 Gallons",
-          "tier2_gallons_description": "Enter the number of gallons for Tier 2. Leave blank if not applicable.",
-          "tier2_price": "Tier 2 Price",
-          "tier2_price_description": "Enter the price per gallon for Tier 2 (e.g., 0.0150).",
-          "tier3_price": "Tier 3 Price",
-          "tier3_price_description": "Enter the price per gallon for Tier 3 (e.g., 0.0175).",
-          "service_fee": "Service Fee",
-          "service_fee_description": "Enter the fixed service fee amount (e.g., 15.00)."
+          "account_number_description": "Enter your Sensus Analytics account (customer) number.",
+          "water_meter_number": "Water Meter Number",
+          "water_meter_number_description": "Enter your Sensus Analytics water meter number.",
+          "water_unit_type": "Unit Type (CF or G)",
+          "water_unit_type_description": "Select the water unit type. 'CF' stands for Cubic Feet and 'G' stands for Gallons.",
+          "water_tier1_gallons": "Tier 1 Gallons",
+          "water_tier1_gallons_description": "Enter the number of gallons for Tier 1. Leave blank if not applicable.",
+          "water_tier1_price": "Tier 1 Price",
+          "water_tier1_price_description": "Enter the price per gallon for Tier 1 (e.g., 0.00717).",
+          "water_tier2_gallons": "Tier 2 Gallons",
+          "water_tier2_gallons_description": "Enter the number of gallons for Tier 2. Leave blank if not applicable.",
+          "water_tier2_price": "Tier 2 Price",
+          "water_tier2_price_description": "Enter the price per gallon for Tier 2 (e.g., 0.00789).",
+          "water_tier3_price": "Tier 3 Price",
+          "water_tier3_price_description": "Enter the price per gallon for Tier 3 (e.g., 0.00867).",
+          "water_service_fee": "Water Service Fee",
+          "water_service_fee_description": "Enter the fixed service fee amount (e.g., 15.17).",
+          "electric_meter_number": "Electric Meter Number",
+          "electric_meter_number_description": "Enter your Sensus Analytics electric meter number.",
+          "electric_unit_type": "Unit Type (kWh)",
+          "electric_unit_type_description": "Select the unit type. 'kWh' stands for kilowatt hours.",
+          "electric_commodity_price": "Electric Commodity Price (from utility)",
+          "electric_commodity_price_description": "Enter the price per kWh for electricity (e.g., 0.1413).",
+          "electric_solar_credit_price": "Solar Credit (Wholesale) Electric Price",
+          "electric_solar_credit_price_description": "Enter the price per kWh for solar electric returned to grid (e.g., -0.0872). Leave blank if not applicable.",
+          "electric_service_fee": "Service Fee",
+          "electric_service_fee_description": "Enter the fixed electric service fee amount (e.g., 12.60).",
+          "gas_meter_number": "Natural Gas Meter Number",
+          "gas_meter_number_description": "Enter your Sensus Analytics natural gas meter number.",
+          "gas_unit_type": "Unit Type (CCF or Therm)",
+          "gas_unit_type_description": "Select the unit type. 'CCF' stands for 100 cubic feet and Therm stands for 100,000 BTUs.",
+          "gas_commodity_fixed_price": "Natural Gas Commodity Price (Fixed)",
+          "gas_commodity_fixed_price_description": "Enter the fixed price per therm for gas (e.g., 0.32).",
+          "gas_commodity_variable_price": "Natural Gas Commodity Price (Variable)",
+          "gas_commodity_variable_price_description": "Enter the variable price per therm for gas (e.g., 0.11).",
+          "gas_heat_content_factor": "Variable heat content factor to convert natural gas between CCF and Therms",
+          "gas_heat_content_factor_description": "Enter the price per therm for solar electric returned to grid (e.g., -0.0872). Leave blank if not applicable.",
+          "gas_service_fee": "Service Fee",
+          "gas_service_fee_description": "Enter the fixed electric service fee amount (e.g., 13.00)."
         }
       }
     },
@@ -69,53 +113,21 @@
     }
   },
   "sensor": {
-    "sensus_analytics_daily_usage": {
-      "name": "Daily Usage",
-      "description": "Daily water usage."
-    },
-    "sensus_analytics_usage_unit": {
-      "name": "Usage Unit",
-      "description": "Native Unit of measurement chosen by Sensus Analytics."
-    },
     "sensus_analytics_meter_address": {
       "name": "Meter Address",
-      "description": "Street address of the water meter."
+      "description": "Street address of the utility meter."
     },
     "sensus_analytics_last_read": {
       "name": "Last Read",
       "description": "Timestamp of the last meter reading."
     },
-    "sensus_analytics_meter_longitude": {
-      "name": "Meter Longitude",
-      "description": "Longitude coordinate of the meter's location."
-    },
-    "sensus_analytics_meter_id": {
-      "name": "Meter ID",
-      "description": "Unique identifier for the water meter."
-    },
     "sensus_analytics_meter_latitude": {
       "name": "Meter Latitude",
       "description": "Latitude coordinate of the meter's location."
     },
-    "sensus_analytics_latest_read_usage": {
-      "name": "Latest Read Usage",
-      "description": "Latest cumulative usage recorded by the meter."
-    },
-    "sensus_analytics_billing_usage": {
-      "name": "Billing Usage",
-      "description": "Total usage amount that has been billed."
-    },
-    "sensus_analytics_billing_cost": {
-      "name": "Billing Cost",
-      "description": "Total cost of the billed usage."
-    },
-    "sensus_analytics_daily_fee": {
-      "name": "Daily Fee",
-      "description": "Daily fee based on usage."
-    },
-    "sensus_analytics_last_hour_usage": {
-      "name": "Last Hour Usage",
-      "description": "Water usage for the last hour."
+    "sensus_analytics_meter_longitude": {
+      "name": "Meter Longitude",
+      "description": "Longitude coordinate of the meter's location."
     },
     "sensus_analytics_last_hour_rainfall": {
       "name": "Last Hour Rainfall",
@@ -129,12 +141,124 @@
       "name": "Last Hour Timestamp",
       "description": "Timestamp of the last hour's data from the previous day."
     },
-    "sensus_analytics_meter_odometer": {
-      "name": "Meter Odometer",
-      "description": "Total cumulative usage recorded by the meter."
+    "sensus_analytics_water_daily_usage": {
+      "name": "Water Daily Usage",
+      "description": "Daily water usage."
     },
-    "sensus_analytics_hourly_timestamp": {
+    "sensus_analytics_water_usage_unit": {
+      "name": "Water Usage Unit",
+      "description": "Water native unit of measurement chosen by Sensus Analytics."
+    },
+    "sensus_analytics_water_meter_id": {
+      "name": "Water Meter ID",
+      "description": "Unique identifier for the water meter."
+    },
+    "sensus_analytics_water_latest_read_usage": {
+      "name": "Latest Read Water Usage",
+      "description": "Latest cumulative water usage recorded by the meter."
+    },
+    "sensus_analytics_water_billing_usage": {
+      "name": "Water Billing Usage",
+      "description": "Total water usage amount that has been billed."
+    },
+    "sensus_analytics_water_billing_cost": {
+      "name": "Water Billing Cost",
+      "description": "Total cost of the billed water usage."
+    },
+    "sensus_analytics_water_daily_fee": {
+      "name": "Water daily Fee",
+      "description": "Water daily fee based on usage."
+    },
+    "sensus_analytics_water_last_hour_usage": {
+      "name": "Last Hour Usage",
+      "description": "Water usage for the last hour."
+    },
+    "sensus_analytics_water_meter_odometer": {
+      "name": "Water Meter Odometer",
+      "description": "Total cumulative usage recorded by the water meter."
+    },
+    "sensus_analytics_water_hourly_timestamp": {
       "name": "Hourly Timestamp",
+      "description": "Timestamp of the last hour's data from the previous day."
+    },
+    "sensus_analytics_electric_daily_usage": {
+      "name": "Electric Daily Usage",
+      "description": "Daily electric usage."
+    },
+    "sensus_analytics_electric_usage_unit": {
+      "name": "Electric Usage Unit",
+      "description": "Electric native unit of measurement chosen by Sensus Analytics."
+    },
+    "sensus_analytics_electric_meter_id": {
+      "name": "Electric Meter ID",
+      "description": "Unique identifier for the electric meter."
+    },
+    "sensus_analytics_electric_latest_read_usage": {
+      "name": "Latest Read Electric Usage",
+      "description": "Latest cumulative electric usage recorded by the meter."
+    },
+    "sensus_analytics_electric_billing_usage": {
+      "name": "Billing Electric Usage",
+      "description": "Total electric usage amount that has been billed."
+    },
+    "sensus_analytics_electric_billing_cost": {
+      "name": "Electric Billing Cost",
+      "description": "Total cost of the billed electric usage."
+    },
+    "sensus_analytics_electric_daily_fee": {
+      "name": "Electric Daily Fee",
+      "description": "Daily fee based on electric usage."
+    },
+    "sensus_analytics_electric_last_hour_usage": {
+      "name": "Last Hour Electric Usage",
+      "description": "Electric usage for the last hour."
+    },
+    "sensus_analytics_electric_meter_odometer": {
+      "name": "Electric Meter Odometer",
+      "description": "Total cumulative electric usage recorded by the meter."
+    },
+    "sensus_analytics_electric_hourly_timestamp": {
+      "name": "Electric Hourly Timestamp",
+      "description": "Timestamp of the last hour's data from the previous day."
+    },
+    "sensus_analytics_gas_daily_usage": {
+      "name": "Gas Daily Usage",
+      "description": "Daily gas usage."
+    },
+    "sensus_analytics_gas_usage_unit": {
+      "name": "Gas Usage Unit",
+      "description": "Gas native unit of measurement chosen by Sensus Analytics."
+    },
+    "sensus_analytics_gas_meter_id": {
+      "name": "Gas Meter ID",
+      "description": "Unique identifier for the gas meter."
+    },
+    "sensus_analytics_gas_latest_read_usage": {
+      "name": "Latest Read Gas Usage",
+      "description": "Latest cumulative gas usage recorded by the meter."
+    },
+    "sensus_analytics_gas_billing_usage": {
+      "name": "Billing Gas Usage",
+      "description": "Total gas usage amount that has been billed."
+    },
+    "sensus_analytics_gas_billing_cost": {
+      "name": "Gas Billing Cost",
+      "description": "Total cost of the billed gas usage."
+    },
+    "sensus_analytics_gas_daily_fee": {
+      "name": "Gas Daily Fee",
+      "description": "Daily fee based on gas usage."
+    },
+    "sensus_analytics_gas_last_hour_usage": {
+      "name": "Last Hour Gas Usage",
+      "description": "Gas usage for the last hour."
+    },
+    "sensus_analytics_gas_meter_odometer": {
+      "name": "Gas Meter Odometer",
+      "description": "Total cumulative gas usage recorded by the meter."
+    },
+    "sensus_analytics_gas_hourly_timestamp": {
+      "name": "Gas Hourly Timestamp",
       "description": "Timestamp of the last hour's data from the previous day."
     }
   }

@@ -49,7 +49,7 @@ A custom Home Assistant integration to monitor your water usage from Sensus Anal
 
 4. **Add the Sensus Analytics Repository**
 
-   - **Repository URL**: `https://github.com/zestysoft/sensus_analytics_integration`
+   - **Repository URL**: `https://github.com/marlinofdoom/sensus_analytics_integration`
    - **Category**: Select "**Integration**" from the dropdown menu.
    - Click "**Add**".
 

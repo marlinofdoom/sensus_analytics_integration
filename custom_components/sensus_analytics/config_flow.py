@@ -11,7 +11,7 @@ from homeassistant.core import callback
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.helpers import config_validation as cv
 
-from .const import CONF_ACCOUNT_NUMBER, CONF_BASE_URL, CONF_METER_NUMBER, CONF_PASSWORD, CONF_USERNAME, DOMAIN
+from .const import CONF_ACCOUNT_NUMBER, CONF_BASE_URL, CONF_WATER_METER_NUMBER, CONF_ELECTRIC_METER_NUMBER, CONF_GAS_METER_NUMBER, CONF_PASSWORD, CONF_USERNAME, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -33,7 +33,7 @@ class SensusAnalyticsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
         if user_input is not None:
             _LOGGER.debug("User input: %s", user_input)
             # Set a unique ID based on account and meter number
-            unique_id = f"{user_input[CONF_ACCOUNT_NUMBER]}_{user_input[CONF_METER_NUMBER]}"
+            unique_id = f"{user_input[CONF_ACCOUNT_NUMBER]}_{user_input[CONF_WATER_METER_NUMBER]}"
             await self.async_set_unique_id(unique_id)
             self._abort_if_unique_id_configured()
 
@@ -49,14 +49,24 @@ class SensusAnalyticsConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
                 vol.Required(CONF_USERNAME): str,
                 vol.Required(CONF_PASSWORD): str,
                 vol.Required(CONF_ACCOUNT_NUMBER): str,
-                vol.Required(CONF_METER_NUMBER): str,
-                vol.Required("unit_type", default="CCF"): vol.In(["CCF", "gal"]),
-                vol.Optional("tier1_gallons"): cv.positive_float,
-                vol.Required("tier1_price", default=0.0128): cv.positive_float,
-                vol.Optional("tier2_gallons"): cv.positive_float,
-                vol.Optional("tier2_price"): cv.positive_float,
-                vol.Optional("tier3_price"): cv.positive_float,
-                vol.Required("service_fee", default=15.00): cv.positive_float,
+                vol.Required(CONF_WATER_METER_NUMBER): str,
+                vol.Required("water_unit_type", default="CCF"): vol.In(["CCF", "gal"]),
+                vol.Optional("water_tier1_gallons"): cv.positive_float,
+                vol.Required("water_tier1_price", default=0.0128): cv.positive_float,
+                vol.Optional("water_tier2_gallons"): cv.positive_float,
+                vol.Optional("water_tier2_price"): cv.positive_float,
+                vol.Optional("water_tier3_price"): cv.positive_float,
+                vol.Required("water_service_fee", default=15.00): cv.positive_float,
+                vol.Required(CONF_ELECTRIC_METER_NUMBER): str,
+                vol.Required("electric_unit_type", default="kWh"): vol.In(["kWh"]),
+                vol.Required("electric_commodity_price", default=0.0128): cv.positive_float,
+                vol.Optional("electric_solar_credit_price"): cv.positive_float,
+                vol.Required("electric_service_fee", default=15.00): cv.positive_float,
+                vol.Required(CONF_GAS_METER_NUMBER): str,
+                vol.Required("gas_unit_type", default="Therm"): vol.In(["Therm", "CCF"]),
+                vol.Required("gas_commodity_fixed_price", default=0.32): cv.positive_float,
+                vol.Optional("gas_commodity_variable_price"): cv.positive_float,
+                vol.Required("gas_service_fee", default=15.00): cv.positive_float,
             }
         )
         return self.async_show_form(step_id="user", data_schema=data_schema, errors=errors)
@@ -127,36 +137,76 @@ class SensusAnalyticsOptionsFlow(config_entries.OptionsFlow):
                     default=current_data.get(CONF_ACCOUNT_NUMBER),
                 ): str,
                 vol.Required(
-                    CONF_METER_NUMBER,
-                    default=current_data.get(CONF_METER_NUMBER),
+                    CONF_WATER_METER_NUMBER,
+                    default=current_data.get(CONF_WATER_METER_NUMBER),
                 ): str,
                 vol.Required(
-                    "unit_type",
-                    default=current_data.get("unit_type", "CCF"),
+                    "water_unit_type",
+                    default=current_data.get("water_unit_type", "CCF"),
                 ): vol.In(["CCF", "gal"]),
                 vol.Optional(
-                    "tier1_gallons",
-                    default=current_data.get("tier1_gallons"),
+                    "water_tier1_gallons",
+                    default=current_data.get("water_tier1_gallons"),
                 ): cv.positive_float,
                 vol.Required(
-                    "tier1_price",
-                    default=current_data.get("tier1_price", 0.0128),
+                    "water_tier1_price",
+                    default=current_data.get("water_tier1_price", 0.0128),
                 ): cv.positive_float,
                 vol.Optional(
-                    "tier2_gallons",
-                    default=current_data.get("tier2_gallons"),
+                    "water_tier2_gallons",
+                    default=current_data.get("water_tier2_gallons"),
                 ): cv.positive_float,
                 vol.Optional(
-                    "tier2_price",
-                    default=current_data.get("tier2_price"),
+                    "water_tier2_price",
+                    default=current_data.get("water_tier2_price"),
                 ): cv.positive_float,
                 vol.Optional(
-                    "tier3_price",
-                    default=current_data.get("tier3_price"),
+                    "water_tier3_price",
+                    default=current_data.get("water_tier3_price"),
                 ): cv.positive_float,
                 vol.Required(
-                    "service_fee",
-                    default=current_data.get("service_fee", 15.00),
+                    "water_service_fee",
+                    default=current_data.get("water_service_fee", 15.00),
+                ): cv.positive_float,
+                vol.Required(
+                    CONF_ELECTRIC_METER_NUMBER,
+                    default=current_data.get(CONF_ELECTRIC_METER_NUMBER),
+                ): str,
+                vol.Required(
+                    "electric_unit_type",
+                    default=current_data.get("electric_unit_type", "kWh"),
+                ): vol.In(["kWh"]),
+                vol.Required(
+                    "electric_commodity_price",
+                    default=current_data.get("electric_commodity_price", 0.0128),
+                ): cv.positive_float,
+                vol.Optional(
+                    "electric_solar_credit_price",
+                    default=current_data.get("electric_solar_credit_price"),
+                ): cv.positive_float,
+                vol.Required(
+                    "electric_service_fee",
+                    default=current_data.get("electric_service_fee", 15.00),
+                ): cv.positive_float,
+                vol.Required(
+                    CONF_GAS_METER_NUMBER,
+                    default=current_data.get(CONF_GAS_METER_NUMBER),
+                ): str,
+                vol.Required(
+                    "gas_unit_type",
+                    default=current_data.get("gas_unit_type", "Therm"),
+                ): vol.In(["Therm", "CCF"]),
+                vol.Required(
+                    "gas_commodity_fixed_price",
+                    default=current_data.get("gas_commodity_fixed_price", 0.0128),
+                ): cv.positive_float,
+                vol.Optional(
+                    "gas_commodity_variable_price",
+                    default=current_data.get("gas_commodity_variable_price"),
+                ): cv.positive_float,
+                vol.Required(
+                    "gas_service_fee",
+                    default=current_data.get("gas_service_fee", 15.00),
                 ): cv.positive_float,
             }
         )

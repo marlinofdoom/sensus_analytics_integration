@@ -9,7 +9,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 from homeassistant.util import dt as dt_util
 
-from .const import CONF_ACCOUNT_NUMBER, CONF_BASE_URL, CONF_METER_NUMBER, CONF_PASSWORD, CONF_USERNAME, DOMAIN
+from .const import CONF_ACCOUNT_NUMBER, CONF_BASE_URL, CONF_WATER_METER_NUMBER, CONF_ELECTRIC_METER_NUMBER, CONF_GAS_METER_NUMBER, CONF_PASSWORD, CONF_USERNAME, DOMAIN
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -24,7 +24,9 @@ class SensusAnalyticsDataUpdateCoordinator(DataUpdateCoordinator):
         self.username = config_entry.data[CONF_USERNAME]
         self.password = config_entry.data[CONF_PASSWORD]
         self.account_number = config_entry.data[CONF_ACCOUNT_NUMBER]
-        self.meter_number = config_entry.data[CONF_METER_NUMBER]
+        self.water_meter_number = config_entry.data[CONF_WATER_METER_NUMBER]
+        self.electric_meter_number = config_entry.data[CONF_ELECTRIC_METER_NUMBER]
+        self.gas_meter_number = config_entry.data[CONF_GAS_METER_NUMBER]
         self.config_entry = config_entry
 
         super().__init__(
@@ -87,8 +89,8 @@ class SensusAnalyticsDataUpdateCoordinator(DataUpdateCoordinator):
         _LOGGER.debug("Authentication successful")
         return session
 
-    def _fetch_daily_data(self, session):
-        """Fetch daily meter data."""
+    def _fetch_daily_water_data(self, session):
+        """Fetch daily water meter data."""
         widget_url = urljoin(self.base_url, "water/widget/byPage")
         _LOGGER.debug("Widget URL: %s", widget_url)
         response = session.post(
@@ -96,7 +98,49 @@ class SensusAnalyticsDataUpdateCoordinator(DataUpdateCoordinator):
             json={
                 "group": "meters",
                 "accountNumber": self.account_number,
-                "deviceId": self.meter_number,
+                "deviceId": self.water_meter_number,
+            },
+            timeout=10,
+        )
+        response.raise_for_status()
+        data = response.json()
+        _LOGGER.debug("Raw response data: %s", data)
+        # Navigate to the specific data
+        data = data.get("widgetList")[0].get("data").get("devices")[0]
+        _LOGGER.debug("Parsed data: %s", data)
+        return data
+
+    def _fetch_daily_electric_data(self, session):
+        """Fetch daily electric meter data."""
+        widget_url = urljoin(self.base_url, "electric/widget/byPage")
+        _LOGGER.debug("Widget URL: %s", widget_url)
+        response = session.post(
+            widget_url,
+            json={
+                "group": "meters",
+                "accountNumber": self.account_number,
+                "deviceId": self.electric_meter_number,
+            },
+            timeout=10,
+        )
+        response.raise_for_status()
+        data = response.json()
+        _LOGGER.debug("Raw response data: %s", data)
+        # Navigate to the specific data
+        data = data.get("widgetList")[0].get("data").get("devices")[0]
+        _LOGGER.debug("Parsed data: %s", data)
+        return data
+
+    def _fetch_daily_gas_data(self, session):
+        """Fetch daily gas meter data."""
+        widget_url = urljoin(self.base_url, "gas/widget/byPage")
+        _LOGGER.debug("Widget URL: %s", widget_url)
+        response = session.post(
+            widget_url,
+            json={
+                "group": "meters",
+                "accountNumber": self.account_number,
+                "deviceId": self.gas_meter_number,
             },
             timeout=10,
         )
