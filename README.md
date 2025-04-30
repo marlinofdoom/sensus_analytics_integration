@@ -1,7 +1,7 @@
-[![](https://img.shields.io/github/release/zestysoft/sensus_analytics_integration/all.svg?style=for-the-badge)](https://github.com/zestysoft/sensus_analytics_integration/releases)
+[![](https://img.shields.io/github/release/marlinofdoom/sensus_analytics_integration/all.svg?style=for-the-badge)](https://github.com/marlinofdoom/sensus_analytics_integration/releases)
 [![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
-[![](https://img.shields.io/github/license/zestysoft/sensus_analytics_integration?style=for-the-badge)](LICENSE)
-[![](https://img.shields.io/badge/MAINTAINER-%40zestysoft-red?style=for-the-badge)](https://github.com/zestysoft)
+[![](https://img.shields.io/github/license/marlinofdoom/sensus_analytics_integration?style=for-the-badge)](LICENSE)
+[![](https://img.shields.io/badge/MAINTAINER-%40marlinofdoom-red?style=for-the-badge)](https://github.com/marlinofdoom)
 [![](https://img.shields.io/badge/COMMUNITY-FORUM-success?style=for-the-badge)](https://community.home-assistant.io)
 
 # HomeAssistant - Sensus Analytics Integration
