@@ -203,7 +203,7 @@ class SensusAnalyticsDataUpdateCoordinator(DataUpdateCoordinator):
 
     def _construct_hourly_data_request(self, start_ts, end_ts):
         """Construct the hourly data request URL and parameters."""
-        usage_url = urljoin(self.base_url, f"water/usage/{self.account_number}/{self.meter_number}")
+        usage_url = urljoin(self.base_url, f"water/usage/{self.account_number}/{self.water_meter_number}")
         params = {
             "start": start_ts,
             "end": end_ts,
