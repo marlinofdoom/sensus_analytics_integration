@@ -1,7 +1,7 @@
 {
   "domain": "sensus_analytics",
   "name": "Sensus Analytics Integration",
-  "version": "1.7.0",
+  "version": "0.1.0",
   "documentation": "https://github.com/marlinofdoom/sensus_analytics_integration",
   "dependencies": [],
   "codeowners": ["@marlinofdoom"],
